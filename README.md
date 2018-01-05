@@ -16,7 +16,12 @@
 	    当其中一个String是另一个String的subString时，差值的意义变成长度差
 	重要方法逻辑
 	    hashCode s[0]*31^(n-1) + s[1]*31^(n-2) + ... + s[n-1]
-	    
+	    intern 这个方法会获取常量池里同值String的引用，如果没有的话会往常量池新增
+	静态方法
+	    join[since1.8] 使用指定分隔符链接若干CharSequence, String.join("_", "hello", "java", "String")//result: hello_java_String
+	    format String.format("hi, now is %s", (Calendar.getInstance()).get(Calendar.YEAR))//result: hi, now is 2018
+
+
 
 
 ```

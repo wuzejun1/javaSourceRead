@@ -1,6 +1,6 @@
 package com.wuzejun.java.learning;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class StringFeature {
     public static void main(String[] args) {
@@ -40,5 +40,48 @@ public class StringFeature {
         System.out.println(
             "hashConflictA.hashCode():" + hashConflictA.hashCode() + ",hashConflictB.hashCode():" + hashConflictB
                 .hashCode() + ",hashCode equal:" + (hashConflictA.hashCode() == hashConflictB.hashCode()));
+
+        /**
+         *
+         * result: false
+         */
+        String a = "abc";
+        String c = "abc";
+        String b = "ab";
+        b += "c";
+        System.out.print((a == b) + ",");
+        System.out.print((a == c) + ",");
+        System.out.println(a.intern() == c && c == b.intern());
+
+        /**
+         * join
+         * result: hello_java_String
+         */
+        System.out.println(String.join("_", "hello", "java", "String"));
+
+        /**
+         * format
+         * result: hi, now is 2018
+         * 注: 2018是个变量，取决于当前年份
+         */
+        System.out.println(String.format("hi, now is %s", (Calendar.getInstance()).get(Calendar.YEAR)));
+
+        /**
+         * OOM test
+         * VM option: -XX:MaxMetaspaceSize=5m -XX:MetaspaceSize=5m -Xmx16m
+         * result: java.lang.OutOfMemoryError: Java heap space
+         */
+
+        //List<String> list = new ArrayList<String>();
+        //String base = "java6PermGenSize|java78HeapSpace";
+        //while(base.length() < 2097152)
+        //{
+        //    String str = base + base;
+        //    base = str;
+        //}
+        //for (int i=0;i< Integer.MAX_VALUE;i++){
+        //    list.add(base+i);
+        //}
+
     }
 }
