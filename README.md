@@ -21,7 +21,5 @@
 	    join[since1.8] 使用指定分隔符链接若干CharSequence, String.join("_", "hello", "java", "String")//result: hello_java_String
 	    format String.format("hi, now is %s", (Calendar.getInstance()).get(Calendar.YEAR))//result: hi, now is 2018
 
-
-
-
 ```
+* [HashMap](HashMap.md)
